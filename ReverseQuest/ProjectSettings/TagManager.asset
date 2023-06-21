@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Devil0
+  - Devil1
+  - Devil2
+  - Bear0
+  - Bear1
+  - Bear2
   layers:
   - Default
   - TransparentFX
