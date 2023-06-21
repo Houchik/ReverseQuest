@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 
 public class ItemDropToTheSideScreen : MonoBehaviour, IDropHandler
 {
+    [SerializeField] Transform plane;
+
     public void OnDrop(PointerEventData eventData)
     {
         Transform itemTransform = eventData.pointerDrag.transform; //получаем transform объект брошенного в side поле
@@ -11,6 +13,6 @@ public class ItemDropToTheSideScreen : MonoBehaviour, IDropHandler
 
         //добавляем на side поле
         Destroy(itemTransform.gameObject);
-        Instantiate(itemToInstantiateTransform);
+        Instantiate(itemToInstantiateTransform, plane.position, Quaternion.identity);
     }
 }
