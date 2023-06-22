@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 767578267077391303}
   - component: {fileID: 4297696177754564538}
   - component: {fileID: -2216665131345178526}
+  - component: {fileID: 3069004134047121650}
   m_Layer: 0
   m_Name: Devil2
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &9103027998269382269
 MeshFilter:
@@ -133,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3069004134047121650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974546106749010307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50eebf6fe8acc88448aca356b4608321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5

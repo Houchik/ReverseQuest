@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5571400901233605083}
   - component: {fileID: 5033900357971564663}
   - component: {fileID: -8097491097107250618}
+  - component: {fileID: 5542926218363174472}
   m_Layer: 0
   m_Name: Devil0
   m_TagString: Untagged
@@ -33,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7658084396322944572
 MeshFilter:
@@ -133,3 +134,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5542926218363174472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5191743942581274517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50eebf6fe8acc88448aca356b4608321, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
