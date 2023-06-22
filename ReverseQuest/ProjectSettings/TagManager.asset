@@ -10,6 +10,7 @@ TagManager:
   - Bear0
   - Bear1
   - Bear2
+  - Slot
   layers:
   - Default
   - TransparentFX
