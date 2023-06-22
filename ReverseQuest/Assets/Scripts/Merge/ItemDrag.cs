@@ -9,7 +9,7 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     private void Start()
     {
-        _canvas = GameObject.Find("Canvas").GetComponent<Canvas>();
+        _canvas = GameObject.Find("MergeCanvas").GetComponent<Canvas>();
         _rectTransform = GetComponent<RectTransform>();
         _canvasGroup = GetComponent<CanvasGroup>();
     }
