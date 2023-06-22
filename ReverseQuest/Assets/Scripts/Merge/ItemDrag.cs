@@ -1,9 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
 public class ItemDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
 {
     private Canvas _canvas;
+
     private RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
 
@@ -16,7 +18,7 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        var slot = _rectTransform.parent;
+        var slot = _rectTransform;
         slot.SetAsLastSibling(); //чтобы объект отрисовывался поверх других
         _canvasGroup.blocksRaycasts = false; //чтобы лучи проходили сквозь объект
     }
