@@ -17,8 +17,8 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        var slot = _rectTransform;
-        slot.SetAsLastSibling(); //чтобы объект отрисовывался поверх других
+        _rectTransform.SetParent(_canvas.transform);
+        _rectTransform.SetAsLastSibling(); //чтобы объект отрисовывался поверх других
         _canvasGroup.blocksRaycasts = false; //чтобы лучи проходили сквозь объект
     }
 
