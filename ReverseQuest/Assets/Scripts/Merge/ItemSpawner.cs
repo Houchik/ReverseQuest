@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class ItemSpawner : MonoBehaviour
 {
@@ -12,7 +13,9 @@ public class ItemSpawner : MonoBehaviour
     private Button _button;
 
     private int _clicksCounter;
+
     private bool _needToReload;
+    private bool _isDoubleClick;
 
     private void Start()
     {
@@ -36,24 +39,36 @@ public class ItemSpawner : MonoBehaviour
 
     public void OnSpawnerClicked()
     {
-        _clicksCounter++;
-
-        if (_clicksCounter == _clicksToReload)
+        if (_isDoubleClick)
         {
-            _image.fillAmount = 0;
-            _clicksCounter = 0;
-            _button.interactable = false;
-            _needToReload = true;
-        }
+            _clicksCounter++;
 
-        GameObject[] slots = GameObject.FindGameObjectsWithTag("Slot");
-        foreach (GameObject slot in slots) //ищем свободный слот
-        {
-            if (slot.transform.childCount == 0)
+            if (_clicksCounter == _clicksToReload)
             {
-                Instantiate(Resources.Load("Images/" + _itemToSpawn.name), slot.transform); //создаем
-                return;
+                _image.fillAmount = 0;
+                _clicksCounter = 0;
+                _button.interactable = false;
+                _needToReload = true;
+            }
+
+            GameObject[] slots = GameObject.FindGameObjectsWithTag("Slot");
+            foreach (GameObject slot in slots) //ищем свободный слот
+            {
+                if (slot.transform.childCount == 0)
+                {
+                    Instantiate(Resources.Load("Images/" + _itemToSpawn.name), slot.transform); //создаем
+                    return;
+                }
             }
         }
+
+        StartCoroutine(IsDoubleClick());
+    }
+
+    private IEnumerator IsDoubleClick()
+    {
+        _isDoubleClick = true;
+        yield return new WaitForSeconds(1);
+        _isDoubleClick = false;
     }
 }
