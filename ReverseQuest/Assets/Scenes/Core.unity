@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87798b88256a8641be0a19c4f26e09c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slider: {fileID: 0}
+  slider: {fileID: 551715897}
   gradient:
     serializedVersion: 2
     key0: {r: 1, g: 0.039183807, b: 0, a: 1}
