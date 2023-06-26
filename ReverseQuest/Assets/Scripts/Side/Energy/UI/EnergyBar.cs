@@ -3,27 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : MonoBehaviour
+public class EnergyBar : MonoBehaviour
 {
     public Slider slider;
-    
+
     public Gradient gradient;
 
     public Image fill;
 
     private float startingGradientValue = 1f;
 
-    public void SetMaxHealth(int maxHealth)
+    public void SetMaxEnergy(int maxEnergy)
     {
-        slider.value = maxHealth;
-        slider.value = maxHealth;
+        slider.value = maxEnergy;
+        slider.value = maxEnergy;
 
         fill.color = gradient.Evaluate(startingGradientValue);
     }
 
-    public void SetHealth(int health)
+    public void SetEnergy(int energy)
     {
-        slider.value = health;
+        slider.value = energy;
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
