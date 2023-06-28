@@ -1,13 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ObjectMover : MonoBehaviour
 {
-    public float speed = 3f;
+    [SerializeField] private float _speed = 3f;
+    private Vector3 _standartSpawnPointPosition;
+
+    private void Start()
+    {
+        _standartSpawnPointPosition = transform.position;
+    }
 
     private void Update()
     {
-        transform.Translate(Vector3.right * speed * Time.deltaTime);
+        if (transform.childCount >= 1)
+        {
+            transform.Translate(Vector3.right * _speed * Time.deltaTime);
+        }
+
+        else
+        {
+            transform.position = _standartSpawnPointPosition;
+        }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class ItemDropToTheSideScreen : MonoBehaviour, IDropHandler
 {
-    [SerializeField] Transform spawnPoint;
+    [SerializeField] private Transform _spawnPoint;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -16,7 +16,7 @@ public class ItemDropToTheSideScreen : MonoBehaviour, IDropHandler
 
             //добавляем на side поле
             Destroy(itemTransform.gameObject);
-            Instantiate(itemToInstantiateTransform, spawnPoint.position, Quaternion.identity);
+            Instantiate(itemToInstantiateTransform, _spawnPoint);
         }
     }
 }
