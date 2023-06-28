@@ -11,6 +11,7 @@ TagManager:
   - Bear1
   - Bear2
   - Slot
+  - Spawner
   layers:
   - Default
   - TransparentFX
