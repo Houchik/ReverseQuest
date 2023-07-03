@@ -12,12 +12,11 @@ public class ObjectMover : MonoBehaviour
 
     private void Update()
     {
-        if (transform.childCount >= 1)
+        if (transform.childCount >= 1 && !AgressiveUnit.isAttacking)
         {
             transform.Translate(Vector3.right * _speed * Time.deltaTime);
         }
-
-        else
+        else if(transform.childCount == 0)
         {
             transform.position = _standartSpawnPointPosition;
         }
