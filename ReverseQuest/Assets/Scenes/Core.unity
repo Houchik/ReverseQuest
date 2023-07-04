@@ -8860,7 +8860,7 @@ GameObject:
   - component: {fileID: 1685230760}
   - component: {fileID: 1685230762}
   m_Layer: 0
-  m_Name: CheckScreenSize
+  m_Name: AdjustSideScreenToDevice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

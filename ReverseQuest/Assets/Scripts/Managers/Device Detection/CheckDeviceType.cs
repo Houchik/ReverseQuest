@@ -9,7 +9,6 @@ public class CheckDeviceType : MonoBehaviour
         float aspectRatio = (float)Screen.width / Screen.height;
         // Если аспект больше 0.65, то это по идее планшет, а все что меньше телефон
         bool isTablet = aspectRatio > 0.65f;
-        Debug.Log("Current Device Aspect Ratio: " + aspectRatio);
 
         return isTablet;
     }
