@@ -14,9 +14,3 @@ public class CheckDeviceType : MonoBehaviour
         return isTablet;
     }
 }
-
-public enum ENUM_Device_Type
-{
-    Tablet,
-    Phone
-}
