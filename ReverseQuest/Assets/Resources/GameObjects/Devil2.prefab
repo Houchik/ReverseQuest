@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -2135828770295123482}
   m_Layer: 0
   m_Name: Devil2
-  m_TagString: Untagged
+  m_TagString: Ally
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

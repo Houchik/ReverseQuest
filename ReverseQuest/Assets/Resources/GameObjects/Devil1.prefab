@@ -149,9 +149,10 @@ GameObject:
   - component: {fileID: -5772101436531952375}
   - component: {fileID: -8125344271039631994}
   - component: {fileID: -8483766184628572516}
+  - component: {fileID: -1401225629069787125}
   m_Layer: 0
   m_Name: Devil1
-  m_TagString: Untagged
+  m_TagString: Ally
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -283,6 +284,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clip: {fileID: 8300000, guid: 2979c309674d5f947af744946921bb4c, type: 3}
+--- !u!114 &-1401225629069787125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392799151546562260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a7f937a74c6c584c937c0eff7339888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 10
+  _attackInterval: 5
+  _startHP: 100
 --- !u!1 &3190174146914872240
 GameObject:
   m_ObjectHideFlags: 0

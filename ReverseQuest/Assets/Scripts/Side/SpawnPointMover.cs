@@ -6,9 +6,9 @@ public class SpawnPointMover : MonoBehaviour
 
     private void Update()
     {
-        if (transform.childCount >= 1 && !Obstacle._canSpawnPointMove)
+        if (transform.childCount >= 1)
         {
-            transform.Translate(Vector3.right * _speed * Time.deltaTime);
+            transform.Translate(transform.forward * _speed * Time.deltaTime, Space.World);
         }
     }
 }
