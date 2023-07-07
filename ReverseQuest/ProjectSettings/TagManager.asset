@@ -15,6 +15,9 @@ TagManager:
   - Obstacle
   - Ally
   - Enemy
+  - Skeleton0
+  - Skeleton1
+  - Skeleton2
   layers:
   - Default
   - TransparentFX
