@@ -15,7 +15,10 @@ public abstract class Unit : MonoBehaviour
         _currentHP = _startHP;
     }
 
-    public abstract void Attack();
+    public virtual void Attack()
+    {
+        StartCoroutine(AttackCooldown());
+    }
 
     public void GetDamage(int damage)
     {
@@ -27,7 +30,20 @@ public abstract class Unit : MonoBehaviour
         Debug.Log(_currentHP + gameObject.name);
     }
 
-    public IEnumerator AttackCooldown()
+    protected virtual void OnDestroy()
+    {
+        EnableSpawnPointMover();
+    }
+
+    private void EnableSpawnPointMover()
+    {
+        foreach (SpawnPointMover spawnPointMover in FindObjectsByType<SpawnPointMover>(FindObjectsSortMode.None))
+        {
+            spawnPointMover.enabled = true;
+        }
+    }
+
+    private IEnumerator AttackCooldown()
     {
         yield return new WaitForSeconds(_attackInterval);
         Attack();

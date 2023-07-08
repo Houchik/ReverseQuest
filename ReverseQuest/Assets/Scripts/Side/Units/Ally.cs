@@ -7,15 +7,12 @@ public class Ally : Unit
     public override void Attack()
     {
         onAllyAttacked?.Invoke(_damage);
-        StartCoroutine(AttackCooldown());
+        base.Attack();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         Enemy.onEnemyAttacked -= GetDamage;
-        foreach (SpawnPointMover spawnPointMover in FindObjectsByType<SpawnPointMover>(UnityEngine.FindObjectsSortMode.None))
-        {
-            spawnPointMover.enabled = true;
-        }
+        base.OnDestroy();
     }
 }

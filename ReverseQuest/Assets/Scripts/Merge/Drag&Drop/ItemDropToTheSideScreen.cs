@@ -1,10 +1,16 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
 
 public class ItemDropToTheSideScreen : MonoBehaviour, IDropHandler
 {
     private Transform _unitSpawnPoint;
-    private Transform _spawnPoint;
+
+    private Dictionary<string, Vector3> unitCoordinates = new Dictionary<string, Vector3>()
+    {
+        {"Devil", new Vector3(0, 0, 0) },
+        {"Skeleton", new Vector3(0, 0, 2) },
+    };
 
     private void Start()
     {
@@ -20,18 +26,11 @@ public class ItemDropToTheSideScreen : MonoBehaviour, IDropHandler
         {
             GameObject itemToInstantiateTransform = Resources.Load("GameObjects/" + itemTag) as GameObject;
             string nameWithoutLastSymbol = itemTag.Remove(itemTag.Length - 1);
-            foreach (Transform child in _unitSpawnPoint)
-            {
-                if(child.name == nameWithoutLastSymbol + "SpawnPoint")
-                {
-                    _spawnPoint = child;
-                    break;
-                }
-            }
 
             //добавляем на side поле
             Destroy(itemTransform.gameObject);
-            Instantiate(itemToInstantiateTransform, _spawnPoint);
+            var createdObject = Instantiate(itemToInstantiateTransform, _unitSpawnPoint);
+            createdObject.transform.localPosition = unitCoordinates[nameWithoutLastSymbol];
         }
     }
 }
