@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using System;
 
 public abstract class Unit : MonoBehaviour
 {
@@ -23,24 +22,12 @@ public abstract class Unit : MonoBehaviour
     public void GetDamage(int damage)
     {
         _currentHP -= damage;
+
         if (_currentHP <= 0)
         {
             Destroy(gameObject);
         }
         Debug.Log(_currentHP + gameObject.name);
-    }
-
-    protected virtual void OnDestroy()
-    {
-        EnableSpawnPointMover();
-    }
-
-    private void EnableSpawnPointMover()
-    {
-        foreach (SpawnPointMover spawnPointMover in FindObjectsByType<SpawnPointMover>(FindObjectsSortMode.None))
-        {
-            spawnPointMover.enabled = true;
-        }
     }
 
     private IEnumerator AttackCooldown()

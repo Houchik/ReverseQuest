@@ -6,13 +6,21 @@ public class Ally : Unit
 
     public override void Attack()
     {
-        onAllyAttacked?.Invoke(_damage);
+        if (onAllyAttacked != null)
+        {
+            onAllyAttacked.GetInvocationList()[0].DynamicInvoke(_damage);
+        }
+
+        else
+        {
+            return;
+        }
+
         base.Attack();
     }
 
-    protected override void OnDestroy()
+    private void OnDestroy()
     {
         Enemy.onEnemyAttacked -= GetDamage;
-        base.OnDestroy();
     }
 }

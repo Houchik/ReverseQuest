@@ -1,14 +1,11 @@
 using UnityEngine;
 
-public class SpawnPointMover : MonoBehaviour
+public abstract class SpawnPointMover : MonoBehaviour
 {
     [SerializeField] private float _speed = 3f;
 
-    private void Update()
+    protected virtual void Update()
     {
-        if (transform.childCount >= 1)
-        {
-            transform.Translate(transform.forward * _speed * Time.deltaTime, Space.World);
-        }
+        transform.Translate(transform.forward * _speed * Time.deltaTime, Space.World);
     }
 }

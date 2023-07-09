@@ -6,13 +6,21 @@ public class Enemy : Unit
 
     public override void Attack()
     {
-        onEnemyAttacked?.Invoke(_damage);
+        if (onEnemyAttacked != null)
+        {
+            onEnemyAttacked.GetInvocationList()[0].DynamicInvoke(_damage);
+        }
+
+        else
+        {
+            return;
+        }
+
         base.Attack();
     }
 
-    protected override void OnDestroy()
+    private void OnDestroy()
     {
         Ally.onAllyAttacked -= GetDamage;
-        base.OnDestroy();
     }
 }
