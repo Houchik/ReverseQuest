@@ -24,6 +24,8 @@ public class ItemDropToTheSideScreen : MonoBehaviour, IDropHandler
         
         if (itemTag != "Spawner")
         {
+            AudioManager.Instance.PlaySfx(AudioClipName.DropUnitOnSideScreen);
+
             GameObject itemToInstantiateTransform = Resources.Load("GameObjects/" + itemTag) as GameObject;
             string nameWithoutLastSymbol = itemTag.Remove(itemTag.Length - 1);
 

@@ -41,6 +41,8 @@ public class ItemSpawner : MonoBehaviour
     {
         if (_isDoubleClick)
         {
+            AudioManager.Instance.PlaySfx(AudioClipName.TapSpawner);
+
             _clicksCounter++;
 
             if (_clicksCounter == _clicksToReload)

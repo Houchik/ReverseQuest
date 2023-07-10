@@ -33,6 +33,7 @@ public class ItemDropToTheSlot : MonoBehaviour, IDropHandler
                     Destroy(itemTransform.gameObject);
                     Destroy(itemInTheSlotTransform.gameObject);
                     itemTransform = Instantiate(newItemTransform).transform;
+                    AudioManager.Instance.PlaySfx(AudioClipName.MergeMaxLevelCreature);
                 }
 
                 else //если элемент максимально возможного объединения или брошен в тот же слот
