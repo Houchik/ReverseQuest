@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class ItemDropToTheSlot : MonoBehaviour, IDropHandler
 {
-    private int _maxPossibleMerge = 2;
+    private int _maxPossibleMerge = 3;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -18,7 +18,6 @@ public class ItemDropToTheSlot : MonoBehaviour, IDropHandler
                 itemInTheSlotTransform.SetParent(itemTransform.parent);
                 itemInTheSlotTransform.localPosition = Vector3.zero;
             }
-
             else
             {
                 int previousItemLastIndex = System.Convert.ToInt32(itemInTheSlotTag.Substring(itemInTheSlotTag.Length - 1));
@@ -35,7 +34,6 @@ public class ItemDropToTheSlot : MonoBehaviour, IDropHandler
                     itemTransform = Instantiate(newItemTransform).transform;
                     AudioManager.Instance.PlaySfx(AudioClipName.MergeMaxLevelCreature);
                 }
-
                 else //если элемент максимально возможного объединения или брошен в тот же слот
                 {
                     return;

@@ -4,20 +4,22 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Devil0
-  - Devil1
-  - Devil2
-  - Bear0
-  - Bear1
-  - Bear2
   - Slot
-  - Spawner
   - Obstacle
   - Ally
   - Enemy
   - Skeleton0
   - Skeleton1
   - Skeleton2
+  - Skeleton3
+  - Succubus0
+  - Succubus1
+  - Succubus2
+  - Vampire0
+  - Vampire1
+  - Skeleton_Spawner
+  - Succubus_Spawner
+  - Vampire_Spawner
   layers:
   - Default
   - TransparentFX

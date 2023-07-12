@@ -6,6 +6,10 @@ public class ItemDropToTheSideScreen : MonoBehaviour, IDropHandler
 {
     private Transform _allySpawnPoint;
 
+    private string _skeletonSpawner = "Skeleton_Spawner";
+    private string _succubusSpawner = "Succubus_Spawner";
+    private string _vampiresSpawner = "Vampire_Spawner";
+
     private Dictionary<string, Vector3> _allyCoordinates = new Dictionary<string, Vector3>()
     {
         {"Devil", new Vector3(0, 0, 0) },
@@ -22,7 +26,7 @@ public class ItemDropToTheSideScreen : MonoBehaviour, IDropHandler
         Transform itemTransform = eventData.pointerDrag.transform; //получаем transform объект брошенного в side поле
         string itemTag = itemTransform.tag; //получаем tag объекта брошенного в side поле
         
-        if (itemTag != "Spawner")
+        if (itemTag != _skeletonSpawner || itemTag != _succubusSpawner || itemTag != _vampiresSpawner)
         {
             AudioManager.Instance.PlaySfx(AudioClipName.DropUnitOnSideScreen);
 
