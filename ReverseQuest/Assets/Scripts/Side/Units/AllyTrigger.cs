@@ -7,10 +7,21 @@ public class AllyTrigger : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Ally.onAllyAttacked += other.GetComponent<Enemy>().GetDamage;
-            foreach (Transform child in transform)
-            {
-                child.GetComponent<Ally>().Attack();
-            }
+            ChildrenAttack();
+        }
+
+        else if (other.CompareTag("Tower"))
+        {
+            Ally.onAllyAttacked += other.GetComponent<Tower>().GetDamage;
+            ChildrenAttack();
+        }
+    }
+
+    private void ChildrenAttack()
+    {
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<Ally>().Attack();
         }
     }
 }

@@ -3,7 +3,6 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    [SerializeField] protected int _damage;
     [SerializeField] private int _attackInterval;
 
     [SerializeField] private int _startHP;
@@ -27,7 +26,6 @@ public abstract class Unit : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Debug.Log(_currentHP + gameObject.name);
     }
 
     private IEnumerator AttackCooldown()

@@ -1,8 +1,11 @@
 using System;
+using UnityEngine;
 
 public class Enemy : Unit
 {
     public static Action<int> onEnemyAttacked;
+
+    [SerializeField] private int _damage;
 
     public override void Attack()
     {

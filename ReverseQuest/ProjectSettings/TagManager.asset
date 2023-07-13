@@ -20,6 +20,7 @@ TagManager:
   - Skeleton_Spawner
   - Succubus_Spawner
   - Vampire_Spawner
+  - Tower
   layers:
   - Default
   - TransparentFX
