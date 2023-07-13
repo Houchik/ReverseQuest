@@ -12,8 +12,10 @@ public class AdjustRenderTexture : MonoBehaviour
 
     private bool _isTablet;
 
-    private int tabletSideScreenWidth = 480;
-    private int mobileSideScreenWidth = 256;
+    private int _tabletSideScreenWidth = 960;
+    private int _tabletSideScreenHeight = 480;
+    private int _mobileSideScreenWidth = 720;
+    private int _mobileSideScreenHeight = 720;
 
     void Awake()
     {
@@ -22,11 +24,13 @@ public class AdjustRenderTexture : MonoBehaviour
         // меняем ширину текстуры согласно дивайсу
         if (_isTablet)
         {
-            sideScreenTexture.width = tabletSideScreenWidth;
+            sideScreenTexture.width = _tabletSideScreenWidth;
+            sideScreenTexture.height = _tabletSideScreenHeight;
         }
         else
         {
-            sideScreenTexture.width = mobileSideScreenWidth;
+            sideScreenTexture.width = _mobileSideScreenWidth;
+            sideScreenTexture.height = _mobileSideScreenHeight;
         }
         
         // Копируем измененнную текстуру в новую
