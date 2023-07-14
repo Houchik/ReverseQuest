@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class FlexibleGridLayout : LayoutGroup
@@ -15,6 +16,12 @@ public class FlexibleGridLayout : LayoutGroup
 
     public bool fitX;
     public bool fitY;
+
+    protected override void Start()
+    {
+        CalculateLayoutInputHorizontal();
+        DestroyImmediate(this);
+    }
 
     public override void CalculateLayoutInputHorizontal()
     {
