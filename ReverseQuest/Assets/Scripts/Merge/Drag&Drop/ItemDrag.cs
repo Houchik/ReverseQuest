@@ -7,6 +7,8 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     private RectTransform _rectTransform;
     private CanvasGroup _canvasGroup;
 
+    private Vector2 _layoutOffset;
+
     private void Start()
     {
         _canvas = GameObject.Find("MergeCanvas").GetComponent<Canvas>();
@@ -16,19 +18,19 @@ public class ItemDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        var slot = _rectTransform.parent;
-        slot.SetAsLastSibling(); //чтобы отрисовывался поверх других
-        _canvasGroup.blocksRaycasts = false; //чтобы лучи проходили сквозь
+        _layoutOffset = _rectTransform.anchoredPosition - eventData.position / _canvas.scaleFactor;
+        _rectTransform.SetAsLastSibling();//чтобы отрисовывался поверх других
+        _canvasGroup.blocksRaycasts = false; //чтобы лучи проходили сквозь        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        _rectTransform.anchoredPosition += eventData.delta / _canvas.scaleFactor;
+        _rectTransform.anchoredPosition = (eventData.position / _canvas.scaleFactor) + _layoutOffset;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.localPosition = Vector3.zero;
+        _rectTransform.anchoredPosition = Vector2.zero;
         _canvasGroup.blocksRaycasts = true;
     }
 }
