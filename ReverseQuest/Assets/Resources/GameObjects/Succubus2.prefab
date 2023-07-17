@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 687ab395fb922aa4a936b7f555d60594, type: 3}
       propertyPath: m_Name
-      value: Succubus
+      value: Succubus2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -106,4 +106,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackInterval: 5
+  _startHP: 50
   _damage: 20
