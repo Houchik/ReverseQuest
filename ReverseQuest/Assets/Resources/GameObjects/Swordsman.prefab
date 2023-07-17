@@ -177,4 +177,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _attackInterval: 3
   _startHP: 150
-  _damage: 50
+  _damage: 10
