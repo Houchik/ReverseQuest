@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class BarEnergy : MonoBehaviour
+public class HealthBar : MonoBehaviour
 {
     public Slider slider;
     
@@ -13,7 +13,7 @@ public class BarEnergy : MonoBehaviour
 
     private float startingGradientValue = 1f;
 
-    public void SetMaxHealth(int maxHealth)
+    public void SetMaxHealth(float maxHealth)
     {
         slider.value = maxHealth;
         slider.value = maxHealth;
@@ -21,7 +21,7 @@ public class BarEnergy : MonoBehaviour
         fill.color = gradient.Evaluate(startingGradientValue);
     }
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
         slider.value = health;
 

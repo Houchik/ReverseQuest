@@ -5,12 +5,11 @@ public abstract class Unit : MonoBehaviour
 {
     [SerializeField] private int _attackInterval;
 
-    [SerializeField] private int _startHP;
-    private int _currentHP;
+    private Health health;
 
     private void Start()
     {
-        _currentHP = _startHP;
+        health = GetComponent<Health>();
     }
 
     public virtual void Attack()
@@ -20,12 +19,7 @@ public abstract class Unit : MonoBehaviour
 
     public void GetDamage(int damage)
     {
-        _currentHP -= damage;
-
-        if (_currentHP <= 0)
-        {
-            Destroy(gameObject);
-        }
+        health.RecieveDamage(damage);
     }
 
     private IEnumerator AttackCooldown()
