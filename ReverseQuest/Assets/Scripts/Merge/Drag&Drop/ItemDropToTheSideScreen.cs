@@ -8,7 +8,8 @@ public class ItemDropToTheSideScreen : MonoBehaviour, IDropHandler
 
     private Dictionary<string, Vector3> _allyCoordinates = new Dictionary<string, Vector3>()
     {
-        {"Devil", new Vector3(0, 0, 0) },
+        {"Vampire", new Vector3(0, 0, -2) },
+        {"Succubus", new Vector3(0, 0, 0) },
         {"Skeleton", new Vector3(0, 0, 2) },
     };
 

@@ -3,7 +3,7 @@ using UnityEngine.EventSystems;
 
 public class ItemDropToTheSlot : MonoBehaviour, IDropHandler
 {
-    private int _maxPossibleMerge = 3;
+    private int _maxPossibleMerge = 4;
 
     public void OnDrop(PointerEventData eventData)
     {

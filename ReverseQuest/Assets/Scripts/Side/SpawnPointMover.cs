@@ -7,5 +7,9 @@ public abstract class SpawnPointMover : MonoBehaviour
     protected virtual void Update()
     {
         transform.Translate(transform.forward * _speed * Time.deltaTime, Space.World);
+        foreach (Transform unit in transform)
+        {
+            unit.GetComponent<Animator>().SetBool("isRunning", true);
+        }
     }
 }

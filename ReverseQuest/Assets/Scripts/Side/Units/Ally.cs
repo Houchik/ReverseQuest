@@ -19,10 +19,12 @@ public class Ally : Unit
             return;
         }
 
+        transform.GetComponent<Animator>().SetBool("isRunning", false);
+        transform.GetComponent<Animator>().Play("Attack");
         base.Attack();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         Enemy.onEnemyAttacked -= GetDamage;
     }
